@@ -13,6 +13,16 @@
 <span>Rocket's {{ rocketState }}!!!</span>
 <br /><br />
 <input type="text" class="form-control" (input)='restart($event)' />
+<br />
+<button class="btn btn-secondary" (click)='saveValue()'>SAVE</button>
 <br /><br />
 <span>{{rocketName}}</span>
+<br /><br />
+<span class="spam"><b>{{rocketNoName}}</b></span>
+<br /><br />
+<input type="text" [(ngModel)]='model' />
+<br /><br />
+<button (click)='saveModel()'>SAVE</button>
+<br /><br />
+<p>Model = {{savedModel}}</p>
 <br /><br />

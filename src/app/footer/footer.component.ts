@@ -15,8 +15,12 @@ export class FooterComponent implements OnInit {
 
   rocketState = "READY";
   rocketName = null;
+  rocketNoName = null;
 
-  start(){
+  model = "S";
+  savedModel = null;
+
+  start() {
     this.rocketState = "LAUNCHED";
     this.button = false;
     this.className = "btn btn-dark";
@@ -27,8 +31,16 @@ export class FooterComponent implements OnInit {
     }, 5000);
   }
 
-  restart(event:Event){
+  restart(event: Event) {
     this.rocketName = (<HTMLInputElement>event.target).value;
+  }
+
+  saveValue() {
+    this.rocketNoName = this.rocketName;
+  }
+
+  saveModel() {
+    this.savedModel = this.model;
   }
 
   getSiteName() {
@@ -36,10 +48,10 @@ export class FooterComponent implements OnInit {
   }
 
   constructor() {
-    setTimeout(()=>{
+    setTimeout(() => {
       this.button = true;
       this.className = "btn btn-primary";
-    },3000);
+    }, 3000);
   }
 
   ngOnInit() {}
