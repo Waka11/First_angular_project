@@ -17,7 +17,7 @@ export class FooterComponent implements OnInit {
   rocketName = null;
   rocketNoName = null;
 
-  model = "S";
+  model = "...";
   savedModel = null;
 
   start() {
