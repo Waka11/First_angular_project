@@ -1,4 +1,4 @@
-<div class="divFooter">
+<div class="divFooter" [ngStyle]="{backgroundColor:getColor()}">
   <b>SiteName --> {{ getSiteName() }}</b>
   <div class="footer">
     <a href="#" class="fa fa-facebook"></a>
@@ -7,11 +7,19 @@
     <a href="#" class="fa fa-android"></a>
     <a href="#" class="fa fa-youtube"></a>
   </div>
+  <br /><br />
+  <span *ngIf='rocketStatus === "Successful"; else statusFailed'>Rocket's {{ rocketState }}!!!</span>
+  <ng-template #statusFailed>
+    <span>Rocket's died</span>
+  </ng-template>
+  <br /><br />
   <button [disabled]="!button" [class]="className" (click)="start()">
     <b class="start">Start</b>
   </button>
   <br /><br />
-  <span>Rocket's {{ rocketState }}!!!</span>
+  <p [ngClass]="{Successful: rocketStatus === 'Successful'}">
+    <b>Rocket Status --> {{ rocketStatus }}</b>
+  </p>
   <br /><br />
   <input type="text" class="form-control" (input)="restart($event)" />
   <br />
@@ -23,9 +31,9 @@
     ><b>{{ rocketNoName }}</b></span
   >
   <br /><br />
-  <input type="text" [(ngModel)]="model" />
+  <input type="text" [(ngModel)]="model" class="form-control"/>
   <br /><br />
-  <button (click)="saveModel()">SAVE</button>
+  <button (click)="saveModel()" class="btn btn-secondary">SAVE</button>
   <br /><br />
   <p>Model = {{ savedModel }}</p>
   <br /><br />

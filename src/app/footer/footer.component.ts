@@ -16,6 +16,7 @@ export class FooterComponent implements OnInit {
   rocketState = "READY";
   rocketName = null;
   rocketNoName = null;
+  rocketStatus = Math.random() > 0.5 ? "Successful" : "Failed";
 
   model = "...";
   savedModel = null;
@@ -29,6 +30,11 @@ export class FooterComponent implements OnInit {
       this.className = "btn btn-primary";
       this.rocketState = "READY";
     }, 5000);
+    this.rocketStatus = Math.random() > 0.5 ? "Successful" : "Failed";
+  }
+
+  getColor(){
+    return this.rocketStatus === 'Successful' ? 'aqua' : 'darkorange';
   }
 
   restart(event: Event) {
