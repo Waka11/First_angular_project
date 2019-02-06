@@ -21,6 +21,8 @@ export class FooterComponent implements OnInit {
   model = "...";
   savedModel = null;
 
+  persons = ['Jack', 'Bill', 'Sam', 'John Ceeena!!!'];
+
   start() {
     this.rocketState = "LAUNCHED";
     this.button = false;
@@ -29,7 +31,7 @@ export class FooterComponent implements OnInit {
       this.button = true;
       this.className = "btn btn-primary";
       this.rocketState = "READY";
-    }, 5000);
+    }, 2000);
     this.rocketStatus = Math.random() > 0.5 ? "Successful" : "Failed";
   }
 

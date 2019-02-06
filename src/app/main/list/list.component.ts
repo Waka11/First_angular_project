@@ -14,21 +14,20 @@ export class ListComponent {
   savedSurname = null;
   savedAge = null;
 
-  takeName(event: Event) {
-    this.name = (<HTMLInputElement>event.target).value;
+  time = null;
+
+  colorChange() {
+    let date = new Date();
+    this.time = date.getHours();
+    return this.time < "13" ? "aqua" : "darkorange";
   }
 
-  takeSurname(event: Event) {
-    this.surname = (<HTMLInputElement>event.target).value;
-  }
-
-  takeAge(event: Event) {
-    this.age = (<HTMLInputElement>event.target).value;
-  }
+  nightColor() {}
 
   saveInfo() {
     this.savedName = this.name;
     this.savedSurname = this.surname;
     this.savedAge = this.age;
+    console.log();
   }
 }
