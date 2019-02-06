@@ -1,1 +1,20 @@
-<p class="alert alert-success">Success!!!</p>
+<div class="divList">
+  <p class="alert alert-success">Success!!!</p>
+  <div class="div">
+    <div class="div2">
+      <input type="text" class="form-control" [(ngModel)]="name" />
+      <input type="text" class="form-control" [(ngModel)]="surname" />
+      <input type="number" class="form-control" [(ngModel)]="age" />
+      <button class="btn btn-primary" (click)="saveInfo()">ADD</button>
+    </div>
+    <p class="p">
+      <b>Name: {{ savedName }}</b>
+      <br />
+      <br />
+      <b>Surname:{{ savedSurname }}</b>
+      <br />
+      <br />
+      <b>Age:{{ savedAge }}</b>
+    </p>
+  </div>
+</div>

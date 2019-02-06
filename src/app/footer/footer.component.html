@@ -1,28 +1,32 @@
-<b>SiteName --> {{ getSiteName() }}</b>
-<div class="footer">
-  <a href="#" class="fa fa-facebook"></a>
-  <a href="#" class="fa fa-google"></a>
-  <a href="#" class="fa fa-twitter"></a>
-  <a href="#" class="fa fa-android"></a>
-  <a href="#" class="fa fa-youtube"></a>
+<div class="divFooter">
+  <b>SiteName --> {{ getSiteName() }}</b>
+  <div class="footer">
+    <a href="#" class="fa fa-facebook"></a>
+    <a href="#" class="fa fa-google"></a>
+    <a href="#" class="fa fa-twitter"></a>
+    <a href="#" class="fa fa-android"></a>
+    <a href="#" class="fa fa-youtube"></a>
+  </div>
+  <button [disabled]="!button" [class]="className" (click)="start()">
+    <b class="start">Start</b>
+  </button>
+  <br /><br />
+  <span>Rocket's {{ rocketState }}!!!</span>
+  <br /><br />
+  <input type="text" class="form-control" (input)="restart($event)" />
+  <br />
+  <button class="btn btn-secondary" (click)="saveValue()">SAVE</button>
+  <br /><br />
+  <span>{{ rocketName }}</span>
+  <br /><br />
+  <span class="spam"
+    ><b>{{ rocketNoName }}</b></span
+  >
+  <br /><br />
+  <input type="text" [(ngModel)]="model" />
+  <br /><br />
+  <button (click)="saveModel()">SAVE</button>
+  <br /><br />
+  <p>Model = {{ savedModel }}</p>
+  <br /><br />
 </div>
-<button [disabled]="!button" [class]="className" (click)="start()">
-  <b class="start">Start</b>
-</button>
-<br /><br />
-<span>Rocket's {{ rocketState }}!!!</span>
-<br /><br />
-<input type="text" class="form-control" (input)='restart($event)' />
-<br />
-<button class="btn btn-secondary" (click)='saveValue()'>SAVE</button>
-<br /><br />
-<span>{{rocketName}}</span>
-<br /><br />
-<span class="spam"><b>{{rocketNoName}}</b></span>
-<br /><br />
-<input type="text" [(ngModel)]='model' />
-<br /><br />
-<button (click)='saveModel()'>SAVE</button>
-<br /><br />
-<p>Model = {{savedModel}}</p>
-<br /><br />
